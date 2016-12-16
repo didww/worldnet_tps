@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.org/Fivell/worldnet_tps.svg)](https://travis-ci.org/Fivell/worldnet_tps)
+
 # Worldnettps
 
  Ruby API client for World Net TPS gateway, http://worldnettps.com/
@@ -6,7 +8,7 @@
 
 Add this line to your application's Gemfile:
 
-    gem 'worldnettps'
+    gem 'worldnet_tps'
 
 And then execute:
 
