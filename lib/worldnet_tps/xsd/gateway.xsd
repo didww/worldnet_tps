@@ -1,0 +1,1909 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="ORDERID">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="12"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="TERMINALID">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="50"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="AMOUNT" type="xs:double"/>
+  <xs:element name="DATETIME">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="50"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="TRACKDATA">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="16"/>
+        <xs:maxLength value="256"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="APPLEPAYLOAD">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="128"/>
+        <xs:maxLength value="20480"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ANDROIDPAYLOAD">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="128"/>
+        <xs:maxLength value="20480"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="CARDNUMBER">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="10"/>
+        <xs:maxLength value="40"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ENCRYPTEDTRACK">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="32"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="KSN">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="5"/>
+        <xs:maxLength value="20"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="FORMATID">
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="1"/>
+        <xs:enumeration value="3"/>
+        <xs:enumeration value="7"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="CARDTYPE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="50"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="CARDEXPIRY">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:length value="4"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="CARDHOLDERNAME">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="0"/>
+        <xs:maxLength value="50"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="HASH">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:length value="32"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="CURRENCY">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:length value="3"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="AUTOREADY">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="1"/>
+        <xs:enumeration value="Y"/>
+        <xs:enumeration value="N"/>
+        <xs:enumeration value="C"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="EMAIL">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="50"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="CVV">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="3"/>
+        <xs:maxLength value="4"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ISSUENO">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="2"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ADDRESS1">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="0"/>
+        <xs:maxLength value="50"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ADDRESS2">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="0"/>
+        <xs:maxLength value="50"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="POSTCODE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="50"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="BILLTOFIRSTNAME">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="60"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="BILLTOLASTNAME">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="60"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="AVSONLY">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="1"/>
+        <xs:enumeration value="Y"/>
+        <xs:enumeration value="N"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="DESCRIPTION">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="1024"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="XID">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="50"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="CAVV">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="50"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="MPIREF">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="20"/>
+        <xs:maxLength value="20"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="MERCHANTREF">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="48"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="CARDREFERENCE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="0"/>
+        <xs:maxLength value="40"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="MOBILENUMBER">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="10"/>
+        <xs:maxLength value="20"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <!--
+   The type of terminal used for the transaction
+           1 = MOTO (Mail Order/Telephone Order)
+           2 = Internet (Card Not Present automatic transaction
+               3 = Card Holder Present
+  -->
+  <xs:element name="TERMINALTYPE">
+    <xs:simpleType>
+      <xs:restriction base="xs:int">
+        <xs:enumeration value="1"/>
+        <xs:enumeration value="2"/>
+        <xs:enumeration value="3"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <!--
+   The transaction type
+          0 = not applicable
+          1 = Single transaction
+          2 = Recurring transaction
+          3 = Installment payment
+          4 = MoTo (To) transaction
+          5 = Fully authenticated transaction 3D Secure txn
+          6 = The merchant attempted to authenticate the cardholder, but the cardholder cannot or does not participate in 3D-Secure.
+          7 = Transaction when payment data was transmitted using SSL encryption, or Channel Encrypted
+          8 = Transaction in the clear, or Non Secure
+          9 = Mo transaction
+
+  -->
+  <xs:element name="TRANSACTIONTYPE">
+    <xs:simpleType>
+      <xs:restriction base="xs:int">
+        <xs:enumeration value="0"/>
+        <xs:enumeration value="1"/>
+        <xs:enumeration value="2"/>
+        <xs:enumeration value="3"/>
+        <xs:enumeration value="4"/>
+        <xs:enumeration value="5"/>
+        <xs:enumeration value="6"/>
+        <xs:enumeration value="7"/>
+        <xs:enumeration value="8"/>
+        <xs:enumeration value="9"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="DEVICEID">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="64"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="PHONE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="6"/>
+        <xs:maxLength value="20"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="COUNTRY">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="2"/>
+        <xs:maxLength value="2"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="CITY">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="128"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="REGION">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="128"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="IPADDRESS">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="7"/>
+        <xs:maxLength value="15"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:simpleType name="UID">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="10"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UNIQUEREF" type="UID"/>
+  <xs:element name="SIGNATURE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="4"/>
+        <xs:maxLength value="1600"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="CUSTOMFIELD">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="NAME" type="xs:string"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PAYMENT">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ORDERID"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="AMOUNT"/>
+        <xs:element ref="DATETIME"/>
+        <xs:choice minOccurs="1" maxOccurs="1">
+          <xs:element ref="TRACKDATA"/>
+          <xs:element ref="CARDNUMBER"/>
+          <xs:element ref="DUKPTCARDDETAILS"/>
+          <xs:element ref="APPLEPAYLOAD"/>
+          <xs:element ref="ANDROIDPAYLOAD"/>
+        </xs:choice>
+        <xs:element ref="CARDTYPE"/>
+        <xs:element ref="CARDEXPIRY" minOccurs="0"/>
+        <xs:element ref="CARDHOLDERNAME" minOccurs="0"/>
+        <xs:element ref="HASH"/>
+        <xs:element ref="CURRENCY"/>
+        <xs:element ref="FOREIGNCURRENCYINFORMATION" minOccurs="0"/>
+        <xs:element ref="TERMINALTYPE"/>
+        <xs:element ref="TRANSACTIONTYPE"/>
+        <xs:element ref="AUTOREADY" minOccurs="0"/>
+        <xs:element ref="EMAIL" minOccurs="0"/>
+        <xs:element ref="CVV" minOccurs="0"/>
+        <xs:element ref="ISSUENO" minOccurs="0"/>
+        <xs:element ref="ADDRESS1" minOccurs="0"/>
+        <xs:element ref="ADDRESS2" minOccurs="0"/>
+        <xs:element ref="POSTCODE" minOccurs="0"/>
+        <xs:element ref="BILLTOFIRSTNAME" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="BILLTOLASTNAME" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="AVSONLY" minOccurs="0"/>
+        <xs:element ref="DESCRIPTION" minOccurs="0"/>
+        <xs:element ref="XID" minOccurs="0"/>
+        <xs:element ref="CAVV" minOccurs="0"/>
+        <xs:element ref="MPIREF" minOccurs="0"/>
+        <xs:element ref="MOBILENUMBER" minOccurs="0"/>
+        <xs:element ref="DEVICEID" minOccurs="0"/>
+        <xs:element ref="PHONE" minOccurs="0"/>
+        <xs:element ref="CITY" minOccurs="0"/>
+        <xs:element ref="REGION" minOccurs="0"/>
+        <xs:element ref="COUNTRY" minOccurs="0"/>
+        <xs:element ref="IPADDRESS" minOccurs="0"/>
+        <xs:element ref="SIGNATURE" minOccurs="0"/>
+        <xs:element ref="CUSTOMFIELD" minOccurs="0" maxOccurs="30"/>
+        <xs:element name="RECURRINGTXNREF" type="UID" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RESPONSECODE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="2"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="RESPONSETEXT">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="30"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="APPROVALCODE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="0"/>
+        <xs:maxLength value="20"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="BANKRESPONSECODE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="2"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="AUTHORIZEDAMOUNT" type="xs:double"/>
+  <xs:element name="AVSRESPONSE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="0"/>
+        <xs:maxLength value="10"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="CVVRESPONSE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="0"/>
+        <xs:maxLength value="10"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="PAYMENTRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="UNIQUEREF" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="RESPONSECODE"/>
+        <xs:element ref="RESPONSETEXT"/>
+        <xs:element ref="APPROVALCODE"/>
+        <xs:element ref="BANKRESPONSECODE" minOccurs="0"/>
+        <xs:element ref="AUTHORIZEDAMOUNT" minOccurs="0"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="AVSRESPONSE" minOccurs="0"/>
+        <xs:element ref="CVVRESPONSE" minOccurs="0"/>
+        <xs:element ref="PROCESSINGTERMINAL" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ERRORSTRING">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="0"/>
+        <xs:maxLength value="1024"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ERRORCODE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="5"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ERROR">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ERRORCODE" minOccurs="0"/>
+        <xs:element ref="ERRORSTRING"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--  This should be used to identify who did the refund  -->
+  <xs:element name="OPERATOR">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="0"/>
+        <xs:maxLength value="128"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="REASON">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="0"/>
+        <xs:maxLength value="256"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="PAREFERENCENUMBER">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="0"/>
+        <xs:maxLength value="64"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="REFUND">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:choice minOccurs="1" maxOccurs="1">
+          <xs:element ref="UNIQUEREF"/>
+          <xs:element ref="ORDERID"/>
+        </xs:choice>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="AMOUNT"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+        <xs:element ref="OPERATOR"/>
+        <xs:element ref="REASON"/>
+        <xs:element ref="AUTOREADY" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="REFUNDRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="RESPONSECODE"/>
+        <xs:element ref="RESPONSETEXT"/>
+        <xs:choice minOccurs="1" maxOccurs="1">
+          <xs:element ref="UNIQUEREF"/>
+          <xs:element ref="ORDERID"/>
+        </xs:choice>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="PROCESSINGTERMINAL" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CARDBIN">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="6"/>
+        <xs:maxLength value="12"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="BASEAMOUNT" type="xs:double"/>
+  <xs:element name="GETCARDCURRENCYRATE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="CARDBIN"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="BASEAMOUNT" minOccurs="0"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TERMINALCURRENCY">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="3"/>
+        <xs:maxLength value="3"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="CARDCURRENCY">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="3"/>
+        <xs:maxLength value="3"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="CONVERSIONRATE" type="xs:double"/>
+  <xs:element name="EXCHANGERATESOURCENAME">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="0"/>
+        <xs:maxLength value="50"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="MARGINRATEPERCENTAGE" type="xs:double"/>
+  <xs:element name="COMMISSIONPERCENTAGE" type="xs:double"/>
+  <xs:element name="FOREIGNAMOUNT" type="xs:double"/>
+  <xs:element name="CARDCURRENCYRATERESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="TERMINALCURRENCY"/>
+        <xs:element ref="CARDCURRENCY"/>
+        <xs:element ref="CONVERSIONRATE"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="EXCHANGERATESOURCENAME"/>
+        <xs:element ref="MARGINRATEPERCENTAGE"/>
+        <xs:element ref="COMMISSIONPERCENTAGE"/>
+        <xs:element ref="FOREIGNAMOUNT" minOccurs="0"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CARDAMOUNT" type="xs:double"/>
+  <xs:element name="FOREIGNCURRENCYINFORMATION">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="CARDCURRENCY"/>
+        <xs:element ref="CARDAMOUNT"/>
+        <xs:element ref="CONVERSIONRATE"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DUKPTCARDDETAILS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ENCRYPTEDTRACK"/>
+        <xs:element ref="KSN"/>
+        <xs:element ref="FORMATID"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PREAUTH">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ORDERID"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="AMOUNT"/>
+        <xs:element ref="DATETIME"/>
+        <xs:choice>
+          <xs:element ref="CARDNUMBER"/>
+        </xs:choice>
+        <xs:element ref="CARDTYPE"/>
+        <xs:element ref="CARDEXPIRY" minOccurs="0"/>
+        <xs:element ref="CARDHOLDERNAME" minOccurs="0"/>
+        <xs:element ref="HASH"/>
+        <xs:element ref="CURRENCY"/>
+        <xs:element ref="FOREIGNCURRENCYINFORMATION" minOccurs="0"/>
+        <xs:element ref="TERMINALTYPE"/>
+        <xs:element ref="TRANSACTIONTYPE"/>
+        <xs:element ref="EMAIL" minOccurs="0"/>
+        <xs:element ref="CVV" minOccurs="0"/>
+        <xs:element ref="ISSUENO" minOccurs="0"/>
+        <xs:element ref="ADDRESS1" minOccurs="0"/>
+        <xs:element ref="ADDRESS2" minOccurs="0"/>
+        <xs:element ref="POSTCODE" minOccurs="0"/>
+        <xs:element ref="DESCRIPTION" minOccurs="0"/>
+        <xs:element ref="CITY" minOccurs="0"/>
+        <xs:element ref="REGION" minOccurs="0"/>
+        <xs:element ref="COUNTRY" minOccurs="0"/>
+        <xs:element ref="IPADDRESS" minOccurs="0"/>
+        <xs:element ref="CUSTOMFIELD" minOccurs="0" maxOccurs="30"/>
+        <xs:element name="RECURRINGTXNREF" type="UID" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PREAUTHRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="UNIQUEREF" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="RESPONSECODE"/>
+        <xs:element ref="RESPONSETEXT"/>
+        <xs:element ref="BANKRESPONSECODE" minOccurs="0"/>
+        <xs:element ref="APPROVALCODE"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="AVSRESPONSE" minOccurs="0"/>
+        <xs:element ref="CVVRESPONSE" minOccurs="0"/>
+        <xs:element ref="PROCESSINGTERMINAL" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PREAUTHCOMPLETION">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:choice minOccurs="1" maxOccurs="1">
+          <xs:element ref="UNIQUEREF"/>
+          <xs:element ref="ORDERID"/>
+        </xs:choice>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="AMOUNT"/>
+        <xs:element ref="FOREIGNCURRENCYINFORMATION" minOccurs="0"/>
+        <xs:element ref="DESCRIPTION" minOccurs="0"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="CVV" minOccurs="0"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PREAUTHCOMPLETIONRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="UNIQUEREF" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="RESPONSECODE"/>
+        <xs:element ref="RESPONSETEXT"/>
+        <xs:element ref="APPROVALCODE"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="AVSRESPONSE" minOccurs="0"/>
+        <xs:element ref="CVVRESPONSE" minOccurs="0"/>
+        <xs:element ref="PROCESSINGTERMINAL" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DONTCHECKSECURITY">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="1"/>
+        <xs:enumeration value="Y"/>
+        <xs:enumeration value="N"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="SECURECARDREGISTRATION">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="CARDNUMBER"/>
+        <xs:element ref="CARDEXPIRY"/>
+        <xs:element ref="CARDTYPE"/>
+        <xs:element ref="CARDHOLDERNAME"/>
+        <xs:element ref="HASH"/>
+        <xs:element ref="DONTCHECKSECURITY" minOccurs="0"/>
+        <xs:element ref="CVV" minOccurs="0"/>
+        <xs:element ref="ISSUENO" minOccurs="0"/>
+        <xs:element ref="PERMITTEDTERMINALS" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="CUSTOMFIELD" minOccurs="0" maxOccurs="3"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SECURECARDREGISTRATIONRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="CARDREFERENCE"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SECURECARDREMOVAL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="CARDREFERENCE"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SECURECARDREMOVALRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SECURECARDUPDATE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="CARDNUMBER" minOccurs="0"/>
+        <xs:element ref="CARDEXPIRY" minOccurs="0"/>
+        <xs:element ref="CARDTYPE"/>
+        <xs:element ref="CARDHOLDERNAME" minOccurs="0"/>
+        <xs:element ref="HASH"/>
+        <xs:element ref="DONTCHECKSECURITY" minOccurs="0"/>
+        <xs:element ref="CVV" minOccurs="0"/>
+        <xs:element ref="ISSUENO" minOccurs="0"/>
+        <xs:element ref="PERMITTEDTERMINALS" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="CUSTOMFIELD" minOccurs="0" maxOccurs="3"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SECURECARDUPDATERESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="CARDREFERENCE"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SECURECARDSEARCH">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="PERMITTEDTERMINALSREQUIRED" minOccurs="0"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SECURECARDSEARCHRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="CARDREFERENCE"/>
+        <xs:element ref="CARDTYPE"/>
+        <xs:element ref="CARDEXPIRY"/>
+        <xs:element ref="CARDHOLDERNAME"/>
+        <xs:element ref="PERMITTEDTERMINALS" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NAME">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="0"/>
+        <xs:maxLength value="256"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="PERIODTYPE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="DAILY"/>
+        <xs:enumeration value="WEEKLY"/>
+        <xs:enumeration value="FORTNIGHTLY"/>
+        <xs:enumeration value="MONTHLY"/>
+        <xs:enumeration value="QUARTERLY"/>
+        <xs:enumeration value="YEARLY"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="LENGTH" type="xs:unsignedInt"/>
+  <xs:element name="SKIPPERIODCOUNT" type="xs:unsignedInt"/>
+  <xs:element name="RECURRINGAMOUNT" type="xs:double"/>
+  <xs:element name="INITIALAMOUNT" type="xs:double"/>
+  <xs:element name="TYPE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="AUTOMATIC"/>
+        <xs:enumeration value="MANUAL"/>
+        <xs:enumeration value="AUTOMATIC (WITHOUT AMOUNTS)"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ONUPDATE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="CONTINUE"/>
+        <xs:enumeration value="UPDATE"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ONDELETE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="CONTINUE"/>
+        <xs:enumeration value="CANCEL"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ADDSTOREDSUBSCRIPTION">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="NAME"/>
+        <xs:element ref="DESCRIPTION" minOccurs="0"/>
+        <xs:element ref="PERIODTYPE"/>
+        <xs:element ref="LENGTH"/>
+        <xs:element ref="CURRENCY"/>
+        <xs:element ref="RECURRINGAMOUNT" minOccurs="0"/>
+        <xs:element ref="INITIALAMOUNT" minOccurs="0"/>
+        <xs:element ref="TYPE"/>
+        <xs:element ref="ONUPDATE"/>
+        <xs:element ref="ONDELETE"/>
+        <xs:element ref="HASH"/>
+        <xs:element ref="CUSTOMFIELD" minOccurs="0" maxOccurs="30"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ADDSTOREDSUBSCRIPTIONRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UPDATESTOREDSUBSCRIPTION">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="NAME"/>
+        <xs:element ref="DESCRIPTION" minOccurs="0"/>
+        <xs:element ref="LENGTH"/>
+        <xs:element ref="CURRENCY"/>
+        <xs:element ref="RECURRINGAMOUNT" minOccurs="0"/>
+        <xs:element ref="INITIALAMOUNT" minOccurs="0"/>
+        <xs:element ref="TYPE"/>
+        <xs:element ref="ONUPDATE"/>
+        <xs:element ref="ONDELETE"/>
+        <xs:element ref="HASH"/>
+        <xs:element ref="CUSTOMFIELD" minOccurs="0" maxOccurs="30"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UPDATESTOREDSUBSCRIPTIONRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DELETESTOREDSUBSCRIPTION">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DELETESTOREDSUBSCRIPTIONRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="STOREDSUBSCRIPTIONREF">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="50"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="SECURECARDMERCHANTREF">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="50"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="SECUREACHACCOUNTMERCHANTREF">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="48"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="STARTDATE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="10"/>
+        <xs:maxLength value="10"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ENDDATE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="10"/>
+        <xs:maxLength value="10"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="EDCCDECISION">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="1"/>
+        <xs:enumeration value="Y"/>
+        <xs:enumeration value="N"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="NEWSTOREDSUBSCRIPTIONINFO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="NAME"/>
+        <xs:element ref="DESCRIPTION"/>
+        <xs:element ref="PERIODTYPE"/>
+        <xs:element ref="LENGTH"/>
+        <xs:element ref="CURRENCY"/>
+        <xs:element ref="RECURRINGAMOUNT" minOccurs="0"/>
+        <xs:element ref="INITIALAMOUNT" minOccurs="0"/>
+        <xs:element ref="TYPE"/>
+        <xs:element ref="ONUPDATE"/>
+        <xs:element ref="ONDELETE"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ADDSUBSCRIPTION">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="STOREDSUBSCRIPTIONREF" minOccurs="0"/>
+        <xs:element ref="SECURECARDMERCHANTREF" minOccurs="0"/>
+        <xs:element ref="CARDREFERENCE" minOccurs="0"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="RECURRINGAMOUNT" minOccurs="0"/>
+        <xs:element ref="INITIALAMOUNT" minOccurs="0"/>
+        <xs:element ref="STARTDATE"/>
+        <xs:element ref="ENDDATE" minOccurs="0"/>
+        <xs:element ref="EDCCDECISION" minOccurs="0"/>
+        <xs:element ref="NEWSTOREDSUBSCRIPTIONINFO" minOccurs="0"/>
+        <xs:element ref="HASH"/>
+        <xs:element ref="CUSTOMFIELD" minOccurs="0" maxOccurs="30"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ADDSUBSCRIPTIONRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UPDATESUBSCRIPTION">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="SECURECARDMERCHANTREF" minOccurs="0"/>
+        <xs:element ref="CARDREFERENCE" minOccurs="0"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="NAME" minOccurs="0"/>
+        <xs:element ref="DESCRIPTION" minOccurs="0"/>
+        <xs:element ref="LENGTH" minOccurs="0"/>
+        <xs:element ref="SKIPPERIODCOUNT" minOccurs="0"/>
+        <xs:element ref="RECURRINGAMOUNT" minOccurs="0"/>
+        <xs:element ref="STARTDATE" minOccurs="0"/>
+        <xs:element ref="ENDDATE" minOccurs="0"/>
+        <xs:element ref="EDCCDECISION" minOccurs="0"/>
+        <xs:element ref="HASH"/>
+        <xs:element ref="CUSTOMFIELD" minOccurs="0" maxOccurs="30"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UPDATESUBSCRIPTIONRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DELETESUBSCRIPTION">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DELETESUBSCRIPTIONRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CANCELSUBSCRIPTION">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CANCELSUBSCRIPTIONRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SUBSCRIPTIONREF">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="50"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="SUBSCRIPTIONPAYMENT">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ORDERID"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="AMOUNT"/>
+        <xs:element ref="SUBSCRIPTIONREF"/>
+        <xs:element ref="DESCRIPTION" minOccurs="0"/>
+        <xs:element ref="FOREIGNCURRENCYINFORMATION" minOccurs="0"/>
+        <xs:element ref="EMAIL" minOccurs="0"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+        <xs:element ref="CUSTOMFIELD" minOccurs="0" maxOccurs="30"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SUBSCRIPTIONPAYMENTRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="UNIQUEREF" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="RESPONSECODE"/>
+        <xs:element ref="RESPONSETEXT"/>
+        <xs:element ref="APPROVALCODE"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CARDDETAILS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="CARDTYPE"/>
+        <xs:element ref="CARDNUMBER"/>
+        <xs:element ref="CARDEXPIRY"/>
+        <xs:element ref="CARDHOLDERNAME"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UNREFERENCEDREFUND">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ORDERID"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:choice minOccurs="1" maxOccurs="1">
+          <xs:element ref="CARDREFERENCE"/>
+          <xs:element ref="CARDDETAILS"/>
+        </xs:choice>
+        <xs:element ref="CURRENCY" minOccurs="0"/>
+        <xs:element ref="AMOUNT"/>
+        <xs:element ref="EMAIL" minOccurs="0"/>
+        <xs:element ref="AUTOREADY" minOccurs="0"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+        <xs:element ref="OPERATOR"/>
+        <xs:element ref="DESCRIPTION" minOccurs="0"/>
+        <xs:element ref="ADDRESS1" minOccurs="0"/>
+        <xs:element ref="CITY" minOccurs="0"/>
+        <xs:element ref="REGION" minOccurs="0"/>
+        <xs:element ref="POSTCODE" minOccurs="0"/>
+        <xs:element ref="COUNTRY" minOccurs="0"/>
+        <xs:element ref="BILLTOFIRSTNAME" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="BILLTOLASTNAME" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UNREFERENCEDREFUNDRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="RESPONSECODE"/>
+        <xs:element ref="RESPONSETEXT"/>
+        <xs:choice minOccurs="1" maxOccurs="1">
+          <xs:element ref="UNIQUEREF"/>
+          <xs:element ref="ORDERID"/>
+        </xs:choice>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="PROCESSINGTERMINAL" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--  VoiceID & Payment related elements  -->
+  <xs:element name="VOICEIDREQUEST">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ORDERID"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="MOBILENUMBER"/>
+        <xs:element ref="EMAIL"/>
+        <xs:element ref="VOICEIDPAYMENT" minOccurs="0"/>
+        <xs:element ref="HASH"/>
+        <xs:element ref="DESCRIPTION" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VOICEIDRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="RESPONSECODE"/>
+        <xs:element ref="RESPONSETEXT"/>
+        <xs:element ref="ORDERID"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VOICEIDPAYMENT">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="AMOUNT"/>
+        <xs:element ref="CURRENCY"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FXCURRENCY">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="3"/>
+        <xs:maxLength value="3"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="GETFXCURRENCYRATE">
+    <xs:complexType>
+      <xs:sequence>
+        <!-- Terminal ID -->
+        <xs:element ref="TERMINALID"/>
+        <!-- Currency -->
+        <xs:element ref="FXCURRENCY"/>
+        <!-- Amount in fxCurrency -->
+        <xs:element ref="BASEAMOUNT" minOccurs="0"/>
+        <!-- Current Time -->
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FXCURRENCYRATERESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <!-- Terminal currency -->
+        <xs:element ref="TERMINALCURRENCY"/>
+        <!-- Gets from request -->
+        <xs:element ref="FXCURRENCY"/>
+        <!-- Rate -->
+        <xs:element ref="CONVERSIONRATE"/>
+        <!-- Result amount -->
+        <xs:element ref="FOREIGNAMOUNT" minOccurs="0"/>
+        <!-- Current server time -->
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FROMSTATUS">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="READY"/>
+        <xs:enumeration value="PENDING"/>
+        <xs:enumeration value="REFERRAL"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="TOSTATUS">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="READY"/>
+        <xs:enumeration value="PENDING"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="TRANSACTIONUPDATE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="UNIQUEREF"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="OPERATOR"/>
+        <xs:element ref="FROMSTATUS"/>
+        <xs:element ref="TOSTATUS"/>
+        <xs:element ref="APPROVALCODE" minOccurs="0"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TRANSACTIONUPDATERESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="RESPONSECODE"/>
+        <xs:element ref="RESPONSETEXT"/>
+        <xs:element ref="UNIQUEREF"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PROCESSINGTERMINAL">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="50"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="SPINSALE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ORDERID"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="AMOUNT"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+        <xs:element ref="CURRENCY"/>
+        <xs:element ref="DESCRIPTION" minOccurs="0"/>
+        <xs:element ref="SPINCODE"/>
+        <xs:element ref="SAFECODE"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SPINCODE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="9"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="SAFECODE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="3"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="PAYMENTID">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="50"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="REFUNDID">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="50"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="SPINSALERESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="PAYMENTID"/>
+        <xs:element ref="RESPONSECODE"/>
+        <xs:element ref="RESPONSETEXT"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SPINREFUND">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="PAYMENTID"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="CURRENCY"/>
+        <xs:element ref="AMOUNT"/>
+        <xs:element ref="REASON" minOccurs="0"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SPINREFUNDRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="REFUNDID"/>
+        <xs:element ref="RESPONSECODE"/>
+        <xs:element ref="RESPONSETEXT"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ACH_ACCOUNT">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="17"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ACH_ACCOUNT_TYPE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="CHECKING"/>
+        <xs:enumeration value="SAVINGS"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ACH_FIRST_NAME">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="100"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ACH_LAST_NAME">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="100"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ACH_ADDRESS1">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:maxLength value="200"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ACH_ADDRESS2">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:maxLength value="200"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ACH_CITY">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:maxLength value="50"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ACH_STATE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:maxLength value="2"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ACH_ZIP">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:maxLength value="10"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ACH_PHONE_NUMBER">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:maxLength value="10"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ACHREFERENCE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="0"/>
+        <xs:maxLength value="17"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ACH_SECURE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="1"/>
+        <xs:enumeration value="Y"/>
+        <xs:enumeration value="N"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ACH_SEC_CODE">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="WEB"/>
+        <xs:enumeration value="TEL"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ACH_TERMINALID">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="10"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ACH_CHECK_NUMBER">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="15"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ACH_NOTIFICATION_URL">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="1024"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ACHSALE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ORDERID"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="ACH_TERMINALID" minOccurs="0"/>
+        <xs:element ref="ACH_SEC_CODE"/>
+        <xs:element ref="CURRENCY"/>
+        <xs:element ref="AMOUNT"/>
+        <xs:element ref="ACH_SECURE"/>
+        <xs:element ref="ACH_CHECK_NUMBER" minOccurs="0"/>
+        <xs:element ref="ACH_ACCOUNT" minOccurs="0"/>
+        <xs:element ref="ACH_ACCOUNT_TYPE" minOccurs="0"/>
+        <xs:element ref="ACH_FIRST_NAME" minOccurs="0"/>
+        <xs:element ref="ACH_LAST_NAME" minOccurs="0"/>
+        <xs:element ref="ACH_ADDRESS1" minOccurs="0"/>
+        <xs:element ref="ACH_ADDRESS2" minOccurs="0"/>
+        <xs:element ref="ACH_CITY" minOccurs="0"/>
+        <xs:element ref="ACH_STATE" minOccurs="0"/>
+        <xs:element ref="ACH_ZIP" minOccurs="0"/>
+        <xs:element ref="ACH_PHONE_NUMBER" minOccurs="0"/>
+        <xs:element ref="DESCRIPTION" minOccurs="0"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="ACH_NOTIFICATION_URL" minOccurs="0"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ACHSALERESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ORDERID"/>
+        <xs:element ref="UNIQUEREF"/>
+        <xs:element ref="RESPONSECODE"/>
+        <xs:element ref="RESPONSETEXT"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ACHDECLINE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ORDERID"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="ACH_TERMINALID" minOccurs="0"/>
+        <xs:element ref="ACH_SEC_CODE"/>
+        <xs:element ref="CURRENCY"/>
+        <xs:element ref="AMOUNT"/>
+        <xs:element ref="ACH_SECURE"/>
+        <xs:element ref="ACH_CHECK_NUMBER" minOccurs="0"/>
+        <xs:element ref="ACH_ACCOUNT" minOccurs="0"/>
+        <xs:element ref="ACH_ACCOUNT_TYPE" minOccurs="0"/>
+        <xs:element ref="ACH_FIRST_NAME" minOccurs="0"/>
+        <xs:element ref="ACH_LAST_NAME" minOccurs="0"/>
+        <xs:element ref="ACH_ADDRESS1" minOccurs="0"/>
+        <xs:element ref="ACH_ADDRESS2" minOccurs="0"/>
+        <xs:element ref="ACH_CITY" minOccurs="0"/>
+        <xs:element ref="ACH_STATE" minOccurs="0"/>
+        <xs:element ref="ACH_ZIP" minOccurs="0"/>
+        <xs:element ref="ACH_PHONE_NUMBER" minOccurs="0"/>
+        <xs:element ref="DESCRIPTION" minOccurs="0"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="ACH_NOTIFICATION_URL" minOccurs="0"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ACHDECLINERESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ORDERID"/>
+        <xs:element ref="UNIQUEREF"/>
+        <xs:element ref="RESPONSECODE"/>
+        <xs:element ref="RESPONSETEXT"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ACHREFUND">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="UNIQUEREF"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="CURRENCY"/>
+        <xs:element name="REFUND_AMOUNT" type="xs:double"/>
+        <xs:element name="REFUND_REASON" type="xs:string"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="ACH_NOTIFICATION_URL" minOccurs="0"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ACHREFUNDRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ORDERID"/>
+        <xs:element ref="UNIQUEREF"/>
+        <xs:element ref="RESPONSECODE"/>
+        <xs:element ref="RESPONSETEXT"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SECUREACHREGISTRATION">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="ACH_TERMINALID" minOccurs="0"/>
+        <xs:element ref="ACH_SEC_CODE" minOccurs="0"/>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="ACH_ACCOUNT"/>
+        <xs:element ref="ACH_ACCOUNT_TYPE"/>
+        <xs:element ref="ACH_FIRST_NAME"/>
+        <xs:element ref="ACH_LAST_NAME"/>
+        <xs:element ref="DESCRIPTION" minOccurs="0"/>
+        <xs:element ref="ACH_ADDRESS1" minOccurs="0"/>
+        <xs:element ref="ACH_ADDRESS2" minOccurs="0"/>
+        <xs:element ref="ACH_CITY" minOccurs="0"/>
+        <xs:element ref="ACH_STATE" minOccurs="0"/>
+        <xs:element ref="ACH_ZIP" minOccurs="0"/>
+        <xs:element ref="ACH_PHONE_NUMBER" minOccurs="0"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SECUREACHREGISTRATIONRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="ACHREFERENCE"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SECUREACHUPDATE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="ACH_TERMINALID" minOccurs="0"/>
+        <xs:element ref="ACH_SEC_CODE" minOccurs="0"/>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="ACHREFERENCE"/>
+        <xs:element ref="ACH_ACCOUNT"/>
+        <xs:element ref="ACH_ACCOUNT_TYPE"/>
+        <xs:element ref="ACH_FIRST_NAME"/>
+        <xs:element ref="ACH_LAST_NAME"/>
+        <xs:element ref="DESCRIPTION" minOccurs="0"/>
+        <xs:element ref="ACH_ADDRESS1" minOccurs="0"/>
+        <xs:element ref="ACH_ADDRESS2" minOccurs="0"/>
+        <xs:element ref="ACH_CITY" minOccurs="0"/>
+        <xs:element ref="ACH_STATE" minOccurs="0"/>
+        <xs:element ref="ACH_ZIP" minOccurs="0"/>
+        <xs:element ref="ACH_PHONE_NUMBER" minOccurs="0"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SECUREACHUPDATERESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="ACHREFERENCE"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SECUREACHDELETION">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="ACHREFERENCE"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SECUREACHDELETIONRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SECUREACHSEARCH">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="ACHREFERENCE"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SECUREACHSEARCHRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="ACHREFERENCE"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ADDSUBSCRIPTIONACH">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="STOREDSUBSCRIPTIONREF" minOccurs="0"/>
+        <xs:element ref="SECUREACHACCOUNTMERCHANTREF"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="RECURRINGAMOUNT" minOccurs="0"/>
+        <xs:element ref="INITIALAMOUNT" minOccurs="0"/>
+        <xs:element ref="STARTDATE"/>
+        <xs:element ref="ENDDATE" minOccurs="0"/>
+        <xs:element ref="NEWSTOREDSUBSCRIPTIONINFO" minOccurs="0"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ADDSUBSCRIPTIONACHRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="RESPONSECODE"/>
+        <xs:element ref="RESPONSETEXT"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UPDATESUBSCRIPTIONACH">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="SECUREACHACCOUNTMERCHANTREF"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="NAME" minOccurs="0"/>
+        <xs:element ref="DESCRIPTION" minOccurs="0"/>
+        <xs:element ref="LENGTH" minOccurs="0"/>
+        <xs:element ref="SKIPPERIODCOUNT" minOccurs="0"/>
+        <xs:element ref="RECURRINGAMOUNT" minOccurs="0"/>
+        <xs:element ref="STARTDATE" minOccurs="0"/>
+        <xs:element ref="ENDDATE" minOccurs="0"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UPDATESUBSCRIPTIONACHRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SUBSCRIPTIONACHPAYMENT">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="SUBSCRIPTIONREF"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="ORDERID"/>
+        <xs:element ref="AMOUNT"/>
+        <xs:element ref="DESCRIPTION" minOccurs="0"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SUBSCRIPTIONACHPAYMENTRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ORDERID"/>
+        <xs:element ref="UNIQUEREF"/>
+        <xs:element ref="RESPONSECODE"/>
+        <xs:element ref="RESPONSETEXT"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DELETESUBSCRIPTIONACH">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DELETESUBSCRIPTIONACHRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CANCELSUBSCRIPTIONACH">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="TERMINALID"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CANCELSUBSCRIPTIONACHRESPONSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MERCHANTREF"/>
+        <xs:element ref="DATETIME"/>
+        <xs:element ref="HASH"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PERMITTEDTERMINALS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="TERMINALID" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PERMITTEDTERMINALSREQUIRED">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1"/>
+        <xs:maxLength value="1"/>
+        <xs:enumeration value="Y"/>
+        <xs:enumeration value="N"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+</xs:schema>

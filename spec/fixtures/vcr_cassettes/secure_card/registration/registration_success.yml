@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://testpayments.worldnettps.com/merchant/xmlpayment
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <SECURECARDREGISTRATION>
+          <MERCHANTREF>worldnet_tps.gem</MERCHANTREF>
+          <TERMINALID>6003</TERMINALID>
+          <DATETIME>10-12-2016:12:00:00:000</DATETIME>
+          <CARDNUMBER>4000060000000006</CARDNUMBER>
+          <CARDEXPIRY>1234</CARDEXPIRY>
+          <CARDTYPE>VISA</CARDTYPE>
+          <CARDHOLDERNAME>John Doe</CARDHOLDERNAME>
+          <HASH>df102e46715a34a05fb26db102a0e7b6</HASH>
+          <CVV>111</CVV>
+        </SECURECARDREGISTRATION>
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Dec 2016 14:51:46 GMT
+      Server:
+      - Apache
+      Content-Length:
+      - '284'
+      Strict-Transport-Security:
+      - max-age=15768000
+      Content-Type:
+      - text/xml;charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<SECURECARDREGISTRATIONRESPONSE><MERCHANTREF>worldnet_tps.gem</MERCHANTREF><CARDREFERENCE>2967539209767734</CARDREFERENCE><DATETIME>15-12-2016:14:51:47:012</DATETIME><HASH>82059a68d09cf803a78631a076a9752e</HASH></SECURECARDREGISTRATIONRESPONSE>"
+    http_version:
+  recorded_at: Thu, 15 Dec 2016 14:51:47 GMT
+recorded_with: VCR 3.0.3

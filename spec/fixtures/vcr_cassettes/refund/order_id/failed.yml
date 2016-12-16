@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://testpayments.worldnettps.com/merchant/xmlpayment
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <REFUND>
+          <ORDERID>TXN-124-57</ORDERID>
+          <TERMINALID>6003</TERMINALID>
+          <AMOUNT>10.50</AMOUNT>
+          <DATETIME>10-12-2016:12:00:00:000</DATETIME>
+          <HASH>02c1305ce3117a89b735e845a46a940e</HASH>
+          <OPERATOR>John</OPERATOR>
+          <REASON>Product is defective</REASON>
+        </REFUND>
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Dec 2016 12:13:21 GMT
+      Server:
+      - Apache
+      Content-Length:
+      - '106'
+      Strict-Transport-Security:
+      - max-age=15768000
+      Content-Type:
+      - text/xml;charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<ERROR><ERRORSTRING>Invalid
+        UNIQUEREF field</ERRORSTRING></ERROR>\n"
+    http_version: 
+  recorded_at: Fri, 16 Dec 2016 12:13:21 GMT
+recorded_with: VCR 3.0.3

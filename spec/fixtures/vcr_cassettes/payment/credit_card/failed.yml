@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://testpayments.worldnettps.com/merchant/xmlpayment
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <PAYMENT>
+          <ORDERID>TXN-124-56</ORDERID>
+          <TERMINALID>6003</TERMINALID>
+          <AMOUNT>10.50</AMOUNT>
+          <DATETIME>10-12-2016:12:00:00:000</DATETIME>
+          <CARDNUMBER>4000060000000006</CARDNUMBER>
+          <CARDTYPE>UNSUPPORTED</CARDTYPE>
+          <CARDEXPIRY>1223</CARDEXPIRY>
+          <CARDHOLDERNAME>John Doe</CARDHOLDERNAME>
+          <HASH>d5c21de35fdebae93b3b78cc2d40966f</HASH>
+          <CURRENCY>USD</CURRENCY>
+          <TERMINALTYPE>2</TERMINALTYPE>
+          <TRANSACTIONTYPE>7</TRANSACTIONTYPE>
+          <EMAIL>john.doe@gmail.com</EMAIL>
+          <CVV>111</CVV>
+          <ADDRESS1>100 MAIN ST</ADDRESS1>
+          <ADDRESS2>SEATTLE WA</ADDRESS2>
+          <POSTCODE>98104</POSTCODE>
+          <PHONE>2064960114</PHONE>
+          <CITY>SEATTLE</CITY>
+          <COUNTRY>US</COUNTRY>
+        </PAYMENT>
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 16 Dec 2016 10:15:49 GMT
+      Server:
+      - Apache
+      Content-Length:
+      - '106'
+      Strict-Transport-Security:
+      - max-age=15768000
+      Content-Type:
+      - text/xml;charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<ERROR><ERRORSTRING>Order
+        Already Processed</ERRORSTRING></ERROR>\n"
+    http_version: 
+  recorded_at: Fri, 16 Dec 2016 10:15:49 GMT
+recorded_with: VCR 3.0.3
