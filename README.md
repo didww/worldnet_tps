@@ -59,7 +59,6 @@ TODO:
  - Dynamic Descriptors 
  - Pre-Authorisation 
  - Unreferenced Refunds
- - XML validation against XSD schema
 
 ## Contributing
 
