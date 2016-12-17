@@ -4,6 +4,7 @@ require 'uri'
 require_relative '../response/success'
 require_relative '../response/error'
 require_relative '../response/invalid_hash'
+require_relative '../xsd'
 
 module WorldnetTps
   module Request
@@ -12,14 +13,17 @@ module WorldnetTps
       class_attribute :invoke_method, :response_keys, instance_writer: false
       attr_reader :gateway, :request, :response, :date_time, :attributes
 
-      def process(struct)
-        root = struct.keys.first
-        data = struct[root]
+      class_attribute :xsd_validation
+      self.xsd_validation = true
+
+      def process!(struct)
+        xml = build_xml(struct)
+        validate_xml!(xml) if xsd_validation?
         uri = URI.parse(ws_url)
         http = Net::HTTP.new(uri.host, 443)
         http.use_ssl = true
         @request = Net::HTTP::Post.new(uri.request_uri)
-        @request.body = self.prepare_xml(root, data)
+        @request.body = xml
         @response = http.request(@request)
         build_response(@response)
       end
@@ -30,6 +34,15 @@ module WorldnetTps
 
       protected
 
+      def validate_xml!(xml)
+        WorldnetTps::XSD.validate!(xml)
+      end
+
+      def build_xml(struct)
+        root = struct.keys.first
+        data = Hash[struct[root].map { |k, v| [prepare_key(k), v.to_s] }]
+        data.to_xml(root: prepare_key(root))
+      end
 
       def build_failed_response(code, message)
         Response::Error.new(code, message)
@@ -56,11 +69,6 @@ module WorldnetTps
       end
 
 
-      def prepare_xml(root, data={})
-        data = Hash[data.map { |k, v| [prepare_key(k), v.to_s] }]
-        data.to_xml(root: prepare_key(root))
-      end
-
       def _invoke!(action)
         add_check_sum!
         verify_request_keys!(self.class.mandatory_attributes(self), self.attributes)
@@ -68,7 +76,7 @@ module WorldnetTps
           h[i] = self.attributes[i]
           h
         end.reject { |_, v| v.nil? }
-        process(action => attrs)
+        process!(action => attrs)
       end
 
       def request_attributes

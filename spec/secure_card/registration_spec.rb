@@ -50,6 +50,8 @@ describe WorldnetTps::Request::SecureCard::Registration do
 
   describe '.create!' do
 
+    include_context :xsd_validation
+
     let(:vcr_cassette) { 'secure_card/registration/registration_success' }
 
     subject do
@@ -72,6 +74,9 @@ describe WorldnetTps::Request::SecureCard::Registration do
   end
 
   describe '.update!' do
+
+    include_context :xsd_validation
+
     let(:vcr_cassette) { 'secure_card/registration/update_success_success' }
 
     let(:attributes) {

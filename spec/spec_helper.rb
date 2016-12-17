@@ -23,6 +23,12 @@ module  WorldnetTpsSharedContext
     end
   end
 
+  shared_context :xsd_validation do
+    before do
+      expect(WorldnetTps::XSD).to receive(:validate!).and_call_original
+    end
+  end
+
   class SandboxCredentials
     def self.attributes
       HashWithIndifferentAccess.new(

@@ -20,6 +20,8 @@ describe WorldnetTps::Request::Refund do
     expect(operation.gateway).to eq(gateway)
   end
 
+
+
   subject do
     VCR.use_cassette(vcr_cassette, match_requests_on: [:method, :uri, :body]) do
       operation.invoke!
@@ -27,6 +29,8 @@ describe WorldnetTps::Request::Refund do
   end
 
   describe '.invoke!' do
+
+    include_context :xsd_validation
 
     context 'by order id' do
 

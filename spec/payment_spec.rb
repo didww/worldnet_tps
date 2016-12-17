@@ -21,7 +21,6 @@ describe WorldnetTps::Request::Payment do
   end
 
 
-
   subject do
     VCR.use_cassette(vcr_cassette, match_requests_on: [:method, :uri, :body]) do
       operation.invoke!
@@ -35,6 +34,9 @@ describe WorldnetTps::Request::Payment do
   end
 
   describe '.invoke!' do
+
+    include_context :xsd_validation
+    
     context 'credit card' do
 
       let(:payment_attributes) do
@@ -44,7 +46,7 @@ describe WorldnetTps::Request::Payment do
           card_expiry: '1223',
           card_holder_name: 'John Doe',
           cvv: '111',
-          order_id: 'TXN-124-59',
+          order_id: 'TXN-124-59'
         )
       end
       let(:vcr_cassette) { 'payment/credit_card/success' }
