@@ -17,6 +17,7 @@ describe WorldnetTps::Request::SecureCard::Removal do
   end
 
   describe '.invoke!' do
+    include_context :xsd_validation
     subject do
       VCR.use_cassette(vcr_cassette, match_requests_on: [:method, :uri, :body]) do
         operation.invoke!
