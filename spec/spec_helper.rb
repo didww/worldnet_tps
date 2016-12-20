@@ -20,6 +20,7 @@ module  WorldnetTpsSharedContext
       expect(subject.success?).to eq(false)
       expect(subject.message).to be_present
       expect(subject).not_to be_success
+      expect(subject.request).to eq(operation)
     end
   end
 
