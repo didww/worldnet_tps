@@ -5,7 +5,6 @@ require 'active_support/core_ext/class/attribute'
 require 'active_support/hash_with_indifferent_access'
 require 'digest/md5'
 require 'worldnet_tps/const'
-require 'worldnet_tps/ws_object'
 require 'worldnet_tps/gateway'
 module WorldnetTps
 
