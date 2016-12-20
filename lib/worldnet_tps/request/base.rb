@@ -13,7 +13,7 @@ module WorldnetTps
       class_attribute :invoke_method, :response_keys, instance_writer: false
       class_attribute :xsd_validation
       self.xsd_validation = true
-      attr_reader :gateway, :request, :response, :date_time, :attributes
+      attr_reader :gateway, :request, :response, :attributes
 
       def initialize(gateway, attrs = {})
         @gateway = gateway
