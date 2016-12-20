@@ -1,12 +1,13 @@
 module WorldnetTps
   module Response
-    class Error
+    class Error < WorldnetTps::Response::Base
 
-      attr_reader :code, :message
+      attr_reader :code, :message, :request
 
-      def initialize(code, message)
+      def initialize(request, code, message)
         @code = code
         @message = message
+        super(request)
       end
 
       def success?

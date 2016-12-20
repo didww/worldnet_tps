@@ -1,3 +1,7 @@
+require_relative 'response/base'
+require_relative 'response/success'
+require_relative 'response/error'
+require_relative 'response/invalid_hash'
 require_relative 'request/secure_card/registration'
 require_relative 'request/secure_card/removal'
 require_relative 'request/secure_card/search'

@@ -1,10 +1,7 @@
 require 'net/http'
 require 'net/https'
 require 'uri'
-require_relative '../response/success'
-require_relative '../response/error'
-require_relative '../response/invalid_hash'
-require_relative '../xsd'
+
 
 module WorldnetTps
   module Request
@@ -71,11 +68,11 @@ module WorldnetTps
       end
 
       def build_failed_response(code, message)
-        Response::Error.new(code, message)
+        Response::Error.new(self, code, message)
       end
 
       def build_success_response(attributes)
-        Response::Success.new(attributes)
+        Response::Success.new(self, attributes)
       end
 
       def build_response(http_response)
@@ -86,8 +83,8 @@ module WorldnetTps
           response_attributes = normalize_response_attributes(data)
           begin
             validate_hash!(response_attributes)
-          rescue WorldnetTps::WsObject::InvalidHashError => e
-            return Response::InvalidHash.new(response_attributes)
+          rescue WorldnetTps::WsObject::InvalidHashError => _
+            return Response::InvalidHash.new(self, response_attributes)
           end
           build_success_response(response_attributes)
         end
