@@ -83,7 +83,7 @@ module WorldnetTps
           response_attributes = normalize_response_attributes(data)
           begin
             validate_hash!(response_attributes)
-          rescue WorldnetTps::WsObject::InvalidHashError => _
+          rescue InvalidHashError => _
             return Response::InvalidHash.new(self, response_attributes)
           end
           build_success_response(response_attributes)
