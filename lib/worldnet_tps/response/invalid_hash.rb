@@ -1,6 +1,6 @@
 module WorldnetTps
   module Response
-    class InvalidHash < WorldnetTps::Response::Success
+    class InvalidHash < WorldnetTps::Response::Base
 
       MESSAGE = 'INVALID RESPONSE HASH'.freeze
       CODE = 'ECUSTOM'.freeze
