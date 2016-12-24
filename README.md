@@ -73,14 +73,13 @@ result = operation.update! #or operation.create! for new credit card
    }
    
     
-   # using secure card is also supported
-   # to do this card_reference attribute from secure_card_registration 
-   # operation result should be used
-   # isntead of real card_number and card_type
+   # To send a payment transaction using a registered card, a standard PAYMENT request should be sent.
+   # The Card Type should be set to 'SECURECARD', the CARDNUMBER should contain the Secure Card Reference,
+   # both CARDEXPIRY and CARDHOLDERNAME tags should be omitted from the request.
    payment_attributes = {
     #...
       card_number: '2967539270368883',
-      card_type: WorldnetTps::Const::SECURECARD
+      card_type: WorldnetTps::Const::SECURECARD # 'SECURECARD'
     #...
    } 
    
